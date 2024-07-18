@@ -1,66 +1,83 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+<h1 align="center">Skeletor</h1>
 
-## About Laravel
+Skeletor est un modèle d'application qui servira pour la création des nouveaux SI (Systèmes d'Information) du FANLab. Il est basé sur le framework PHP Laravel et intègre les fonctionnalités de base nécessaires à la plupart des applications comme :
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+-   [L'authentification des utilisateurs](https://laravel.com/docs/11.x/starter-kits#laravel-breeze).
+-   [La gestion des rôles et des permissions](https://spatie.be/docs/laravel-permission/v6/introduction).
+-   [Des opérations CRUD basiques](#).
+-   [Une solution de conteneurisation](https://laravel.com/docs/11.x/sail).
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Toutes ces fonctionnalités seront inclues dans Skeletor afin de garantir au développeur un bon démarrage lors de la création du projet ainsi qu'un procédé de développement rapide.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Installation
 
-## Learning Laravel
+Pour installer Skeletor, vous devez suivre les étapes suivantes :
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+1. Cloner le dépôt
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+```bash
+git clone https://github.com/Gitfanlab/skeletor.git
+```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+2. Installer les dépendances
 
-## Laravel Sponsors
+```bash
+composer install
+```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+3. Créer un fichier `.env` à partir du fichier `.env.example`
 
-### Premium Partners
+```bash
+cp .env.example .env
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+4. Générer une clé d'application
 
-## Contributing
+```bash
+php artisan key:generate
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+5. Configurer la base de données dans le fichier `.env`
 
-## Code of Conduct
+```bash
+DB_CONNECTION=mysql
+DB_HOST=
+DB_PORT=
+DB_DATABASE=
+DB_USERNAME=
+DB_PASSWORD=
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+6. Exécuter les migrations et les seeders
 
-## Security Vulnerabilities
+```bash
+php artisan migrate --seed
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+**RECOMMANDÉ :** Dans les seeders, vous trouverez le fichier `database/seeders/UserSeeder.php` qui contient le script de création de l'utilisateur administrateur. Vous pouvez modifier les informations de cet utilisateur avant de lancer les seeders.
 
-## License
+7. Lancer le serveur
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```bash
+php artisan serve
+```
+
+## Socle technique
+
+Skeletor est basé sur les technologies suivantes :
+
+-   [Laravel](https://laravel.com/docs/11.x) - Le framework PHP utilisé
+-   [TailwindCSS](https://tailwindcss.com/) - Le framework CSS utilisé
+-   [Laravel Breeze](https://laravel.com/docs/11.x/starter-kits#laravel-breeze) - Le package d'authentification des utilisateurs
+-   [Spatie](https://spatie.be/docs/laravel-permission/v6/introduction) - Le package de gestion des rôles et des permissions
+-   [Sail](https://laravel.com/docs/11.x/sail) - La solution de conteneurisation (non utilisée à l'origine mais disponible)
+
+Celles-ci permettent de garantir un développement rapide et efficace de l'application, tout en respectant certains critères du Cadre de Cohérence Technique :
+
+-   **Sécurité** : Les utilisateurs sont authentifiés et autorisés à accéder à certaines ressources de l'application.
+-   **Performance** : L'application se comporte comme une <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Glossary/SPA">SPA</a> grâce à Livewire et ne nécessite pas de rechargement de page. Le contenu est <a target="_blank" href="https://www.sanity.io/glossary/server-side-rendering">rendu côté serveur (SSR)</a> et envoyé au client de manière asynchrone. Cela permet de donner l'impression que l'application est plus rapide et limite l'utilisation de la bande passante.
+-   **Maintenabilité** : Le code est structuré et organisé pour faciliter la maintenance et l'évolution de l'application.
+-   **Extensibilité** : Les fonctionnalités de l'application peuvent être étendues et modifiées facilement.
+-   **Testabilité** : Le code est testable et les tests unitaires et fonctionnels peuvent être écrits pour garantir le bon fonctionnement de l'application.
