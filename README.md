@@ -77,7 +77,7 @@ Skeletor est basé sur les technologies suivantes :
 Celles-ci permettent de garantir un développement rapide et efficace de l'application, tout en respectant certains critères du Cadre de Cohérence Technique :
 
 -   **Sécurité** : Les utilisateurs sont authentifiés et autorisés à accéder à certaines ressources de l'application.
--   **Performance** : L'application se comporte comme une <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Glossary/SPA">SPA</a> grâce à Livewire et ne nécessite pas de rechargement de page. Le contenu est <a target="_blank" href="https://www.sanity.io/glossary/server-side-rendering">rendu côté serveur (SSR)</a> et envoyé au client de manière asynchrone. Cela permet de donner l'impression que l'application est plus rapide et limite l'utilisation de la bande passante.
+-   **Performance** : Le contenu est <a target="_blank" href="https://www.sanity.io/glossary/server-side-rendering">rendu côté serveur (SSR)</a>. Cela permet d'améliorer la performance de l'application en privilégiant une utilisation légère des ressources client.
 -   **Maintenabilité** : Le code est structuré et organisé pour faciliter la maintenance et l'évolution de l'application.
 -   **Extensibilité** : Les fonctionnalités de l'application peuvent être étendues et modifiées facilement.
--   **Testabilité** : Le code est testable et les tests unitaires et fonctionnels peuvent être écrits pour garantir le bon fonctionnement de l'application.
+-   **Testabilité** : Les tests unitaires et fonctionnels peuvent être écrits pour garantir le bon fonctionnement de l'application.
