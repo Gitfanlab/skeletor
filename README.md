@@ -44,7 +44,7 @@ php artisan key:generate
 5. Configurer la base de données dans le fichier `.env`
 
 ```bash
-DB_CONNECTION=mysql
+DB_CONNECTION=mariadb
 DB_HOST=localhost
 DB_PORT=3306
 DB_DATABASE=skeletor
