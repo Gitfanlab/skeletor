@@ -25,6 +25,8 @@ git clone https://github.com/Gitfanlab/skeletor.git
 
 ```bash
 composer install
+
+npm install
 ```
 
 3. Créer un fichier `.env` à partir du fichier `.env.example`
@@ -43,11 +45,11 @@ php artisan key:generate
 
 ```bash
 DB_CONNECTION=mysql
-DB_HOST=
-DB_PORT=
-DB_DATABASE=
-DB_USERNAME=
-DB_PASSWORD=
+DB_HOST=localhost
+DB_PORT=3306
+DB_DATABASE=skeletor
+DB_USERNAME=admin
+DB_PASSWORD=admin
 ```
 
 6. Exécuter les migrations et les seeders
@@ -56,7 +58,7 @@ DB_PASSWORD=
 php artisan migrate --seed
 ```
 
-**RECOMMANDÉ :** Dans les seeders, vous trouverez le fichier `database/seeders/UserSeeder.php` qui contient le script de création de l'utilisateur administrateur. Vous pouvez modifier les informations de cet utilisateur avant de lancer les seeders.
+**RECOMMANDÉ :** Dans les seeders, vous trouverez le fichier `database/seeders/DatabaseSeeder.php` qui contient le script de création de l'utilisateur administrateur ainsi que la logique d'attribution des rôles. Vous pouvez modifier les informations de cet utilisateur avant de lancer le seeder.
 
 7. Lancer le serveur
 
